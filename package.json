@@ -1,0 +1,30 @@
+{
+  "name": "routing",
+  "version": "1.0.0",
+  "description": "fast and efficient routing",
+  "main": "routing.js",
+  "scripts": {
+    "test": "echo \"no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robojones/routing.git"
+  },
+  "keywords": [
+    "routing",
+    "route",
+    "async",
+    "asynchronous",
+    "logic"
+  ],
+  "author": "robojones",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/robojones/routing/issues"
+  },
+  "homepage": "https://github.com/robojones/routing#readme",
+  "engines" : {
+  	"node" : ">=6.3.1"
+  },
+  "tonicExample": "const routing = require('routing');"
+}
