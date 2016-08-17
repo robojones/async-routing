@@ -58,8 +58,9 @@ e.g.`/foo` or `/foo/baz`
 The handlers get the arguments passed as second argument to the `.run()` method (see below) and as last argument a method called `next()`
 
 __Warning:__ Your handlers need to have exactly as much arguments as the .run method gets passed as second argument plus the `next()` method.
-e.g. if you are passing `req` and `res` to the router all your handlers need to get `req`, `res` and `next()`.
 __Methods without the correct amount of arguments will not get called.__
+
+e.g. if you are passing `req` and `res` to the router all your handlers need to get `req`, `res` and `next()`.
 
 #### Returns
 `this`
