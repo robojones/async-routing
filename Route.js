@@ -18,7 +18,7 @@ class Route {
             return typeof f === 'function' || f instanceof Route
         });
 
-        if(path && path !== true) {
+        if(path && (path !== true || rawPath.length)) {
             let r = new Route();
             r.route.apply(r, [rawPath].concat(route));
             route = [r];
@@ -64,13 +64,13 @@ class Route {
                 if(typeof route === 'function') {
                     tryHandler(route, args, next);
                 } else if(route instanceof Route) {
-                    runRoute(route, fullPath, args, next);
+                    runRoute(route, fullPath.slice(1), args, next);
                 } else {
                     throw new Error('routing error');
                 }
             } else if(p === path) { // wenn richtiger pfad
                 if(route instanceof Route) {
-                    runRoute(route, fullPath, args, next);
+                    runRoute(route, fullPath.slice(1), args, next);
                 } else {
                     throw new Error('routing error');
                 }
@@ -91,7 +91,7 @@ function tryHandler(handler, args, next) {
 }
 
 function runRoute(route, path, args, next) {
-    process.nextTick(route.run.bind(route, path.slice(1), args, next));
+    process.nextTick(route.run.bind(route, path, args, next));
 }
 
 function parsePath(path) {
