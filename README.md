@@ -46,11 +46,16 @@ found /hello
 ```
 All other paths get a `404 Not Found` message as response.
 
-## Tip: \* matches every route.
+## Routes with *
+`*` matches every route.
 
 `/*/adsf`
-matches `/hi/asdf`, `/a/asdf` or `/fuu/asdf`
-it does not match on `/asdf`
+matches `/hi/asdf`, `/a/asdf` and `/foo/asdf`
+it does not match `/asdf`
+
+`/foo/*`
+matches `/foo/baz`, `/foo/asdf` and `/foo/asdf/baz`
+it does not match `/foo`
 
 ## Methods
 ### .route()
