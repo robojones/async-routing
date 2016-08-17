@@ -5,6 +5,10 @@ class Route {
         this.routes = [];
         this.paths = [];
     }
+    /**
+    * Add a new route
+    * @param {function|...*} args
+    */
     route(...args) {
         const self = this;
 
@@ -27,6 +31,12 @@ class Route {
 
         return this;
     }
+    /**
+    * Match your routing-logic on a path
+    * @param {Object|string} fullPath - the path
+   	* @param {Object} args - array or arguments for the routes
+   	* @param {function} done - callback triggered when no endpoint is reached
+    */
     run(fullPath, args, done) {
         const self = this;
         var i = 0;
@@ -47,7 +57,6 @@ class Route {
                 if(done) done();
                 return;
             }
-
 
             const p = self.paths[i];
             const route = self.routes[i];
