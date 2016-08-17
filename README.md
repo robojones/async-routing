@@ -45,6 +45,13 @@ A request on `localhost:3000/hello` would have this response:
 found /hello
 ```
 All other paths get a `404 Not Found` message as response.
+
+## Tip: \* matches every route.
+
+`/*/adsf`
+matches `/hi/asdf`, `/a/asdf` or `/fuu/asdf`
+it does not match on `/asdf`
+
 ## Methods
 ### .route()
 Add a route.
