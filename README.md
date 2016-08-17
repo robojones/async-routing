@@ -36,7 +36,7 @@ server.listen(3000, function () {
   console.log(`Server running on port`, port);
 });
 ```
-When requesting `localhost:3000` in the browser you will now get
+When requesting `localhost:3000` in the browser you will get:
 ```
 found homepage
 ```
@@ -45,18 +45,6 @@ A request on `localhost:3000/hello` would have this response:
 found /hello
 ```
 All other paths get a `404 Not Found` message as response.
-
-## Routes with *
-`*` matches every route.
-
-`/*/adsf`
-matches `/hi/asdf`, `/a/asdf` and `/foo/asdf`
-it does not match `/asdf`
-
-`/foo/*`
-matches `/foo/baz`, `/foo/asdf` and `/foo/asdf/baz`
-it does not match `/foo`
-
 ## Methods
 ### .route()
 Add a route.
@@ -93,3 +81,14 @@ If you are working with a http-server this would be:
 3\. An error-handler that is getting called when every route that matches calls `next()`.
 
 On a http-server you would probably send a 404 status code.
+
+## Routes with *
+`/*` or `*` matches every route.
+
+`/*/adsf`
+matches `/hi/asdf`, `/a/asdf` and `/foo/asdf`.
+It does not match `/asdf`.
+
+`/foo/*`
+matches `/foo/baz`, `/foo/asdf` and `/foo/asdf/baz`.
+it does not match `/foo`.
