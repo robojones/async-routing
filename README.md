@@ -91,4 +91,4 @@ It does not match `/asdf`.
 
 `/foo/*`
 matches `/foo/baz`, `/foo/asdf` and `/foo/asdf/baz`.
-it does not match `/foo`.
+It does not match `/foo`.
