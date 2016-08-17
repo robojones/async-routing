@@ -1,9 +1,9 @@
-#routing - fast and efficient routing
+#async-routing - fast and efficient routing
 ## Example
 ```
 const http = require('http');
 const url  = require('url');
-const routing = require('routing');
+const routing = require('async-routing');
 
 //create a new router
 const router = routing();
